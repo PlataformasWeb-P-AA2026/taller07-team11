@@ -31,7 +31,6 @@ with open("data/datos_jugadores.txt", "r", encoding="utf-8") as file:
 
         club_nombre, posicion, dorsal, nombre = line.strip().split(";")
 
-        # search club in database
         club_busqueda = session.query(Club).filter_by(nombre=club_nombre).first()
 
         jugador = Jugador(
